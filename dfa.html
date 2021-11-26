@@ -10,6 +10,7 @@
     <link href="./dfa.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript" src="./dfa.js"></script>
 </head>
 <header>
@@ -38,6 +39,16 @@
 
 <body>
     <div class="d-flex" id="wrapper">
+        
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper" style="width: 100%;">
+            <!-- Page content-->
+            <div class="container-fluid">
+                <label for="numVariable" class="mt-4 form-label">Pesquisar Palavra</label>
+                <input type="text" class="form-control" id="token" name="token" oninput="change()">
+            </div>
+        </div>
+
         <!-- Sidebar-->
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" id="words" style="width: 250px; height: 100%;">
@@ -46,7 +57,7 @@
                     <svg class="bi me-2" width="30" height="24">
                         <use xlink:href="#bootstrap"></use>
                     </svg>
-                    <span class="fs-5 fw-semibold">Lista de Palvras</span>
+                    <span class="fs-5 fw-semibold">Lista de Palavras</span>
                 </a>
                 <div class="list-group list-group-flush border-bottom scrollarea">
                     <a class="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
@@ -103,19 +114,8 @@
                 </div>
             </div>
         </div>
-        <!-- Page content wrapper-->
-        <div id="page-content-wrapper" style="width: 100%;">
-            <!-- Page content-->
-            <div class="container-fluid">
-                <!-- <div class="row g-3">
-                    <div class="col-sm-12"> -->
-                        <label for="numVariable" class="mt-4 form-label">Pesquisar Palavra</label>
-                        <input type="text" class="form-control" id="token" name="token" oninput="change()">
-                    <!-- </div>
-                </div> -->
-            </div>
-        </div>
     </div>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
