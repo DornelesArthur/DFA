@@ -16,10 +16,20 @@ function change() {
     current_state = analyzer.state_stack.pop();
     old_token = analyzer.token_stack.pop();
     if (current_state != "Error" && analyzer.current_state == "Error") {
-      $(".row_".concat(current_state)).css("background-color", "rgba(26, 170, 26, 0.60)");
-      $(".collum_".concat(old_token)).css("background-color", "rgba(26, 170, 26, 0.60)");
-
-    }else if (analyzer.current_state != "Error") {
+      if (analyzer.token_stack.length > 0) {
+        $(".row_".concat(current_state)).css(
+          "background-color",
+          "rgba(26, 170, 26, 0.60)"
+        );
+        $(".collum_".concat(old_token)).css(
+          "background-color",
+          "rgba(26, 170, 26, 0.60)"
+        );
+      } else {
+        $(".row_".concat(current_state)).css("background-color", "");
+        $(".collum_".concat(old_token)).css("background-color", "");
+      }
+    } else if (analyzer.current_state != "Error") {
       analyzer.current_state = current_state;
       $(".row_".concat(current_state)).css("background-color", "");
       console.log(current_token);
