@@ -1,15 +1,11 @@
 $(document).ready(function () {
   $("#sidebar-wrapper").hide();
-  $(".collum_d".concat()).css("background-color", "rgba(216, 0, 0, 0.6)");
-  $(".row_q32".concat()).css("background-color", "rgba(216, 0, 0, 0.6)");
 });
 
 function change() {
-  // $(".collum_".concat()).css("background-color","");
-  // $(".row_".concat()).css("background-color","");
-  var token = document.getElementById("token").value.slice(-1);
+  var current_token = document.getElementById("token").value.slice(-1);
   if (analyzer.current_state != "Error") {
-    var new_state = analyzer.dfa.get(analyzer.current_state).get(token);
+    var new_state = analyzer.dfa.get(analyzer.current_state).get(current_token);
   }
   var current_state = analyzer.current_state;
   if (this.old_length == undefined) {
@@ -17,9 +13,24 @@ function change() {
   }
 
   if (document.getElementById("token").value.length < this.old_length) {
-    analyzer.current_state = analyzer.path_stack.pop();
+    current_state = analyzer.state_stack.pop();
+    old_token = analyzer.token_stack.pop();
+    if (current_state != "Error" && analyzer.current_state == "Error") {
+      $(".row_".concat(current_state)).css("background-color", "rgba(26, 170, 26, 0.60)");
+      $(".collum_".concat(old_token)).css("background-color", "rgba(26, 170, 26, 0.60)");
+
+    }else if (analyzer.current_state != "Error") {
+      analyzer.current_state = current_state;
+      $(".row_".concat(current_state)).css("background-color", "");
+      console.log(current_token);
+
+      console.log(analyzer.token_stack);
+      $(".collum_".concat(old_token)).css("background-color", "");
+    }
+    analyzer.current_state = current_state;
   } else if (document.getElementById("token").value.length > this.old_length) {
-    if (token == " ") {
+    analyzer.token_stack.push(current_token);
+    if (current_token == " ") {
       console.log(
         "Estado final = ".concat(analyzer.final_state == analyzer.current_state)
       );
@@ -28,24 +39,47 @@ function change() {
       } else {
         swal("Falha!", "Palavra Inválida!", "error");
       }
-      $(".row_".concat(analyzer.path_stack.slice(-1).pop())).css(
-        "background-color",
-        ""
-      );
-      $(".collum_".concat(analyzer.words_stack.slice(-1).pop())).css("background-color","");
+
       analyzer.current_state = analyzer.start_state;
       document.getElementById("token").value = "";
-      for (let i = 0; i < analyzer.path_stack.length; i++) {
-        analyzer.path_stack.pop();
-        analyzer.words_stack.pop();
+      for (let i = 0; i < analyzer.state_stack.length; i++) {
+        analyzer.state_stack.pop();
+      }
+      for (let i = 0; i < analyzer.token_stack.length; i++) {
+        analyzer.token_stack.pop();
+      }
+      for (let i = 0; i < 38; i++) {
+        $(".row_q".concat(i)).css("background-color", "");
+      }
+      for (let i = 97; i < 123; i++) {
+        $(".collum_".concat(String.fromCharCode(i))).css(
+          "background-color",
+          ""
+        );
       }
     } else {
-      analyzer.path_stack.push(current_state);
-      analyzer.words_stack.push(token);
+      analyzer.state_stack.push(current_state);
+
       if (analyzer.current_state != "Error") {
         if (new_state != undefined) {
+          $(".collum_".concat(current_token)).css(
+            "background-color",
+            "rgba(26, 170, 26, 0.60)"
+          );
+          $(".row_".concat(current_state)).css(
+            "background-color",
+            "rgba(26, 170, 26, 0.60)"
+          );
           analyzer.current_state = new_state;
         } else {
+          $(".collum_".concat(current_token)).css(
+            "background-color",
+            "rgba(216, 0, 0, 0.6)"
+          );
+          $(".row_".concat(current_state)).css(
+            "background-color",
+            "rgba(216, 0, 0, 0.6)"
+          );
           analyzer.current_state = "Error";
         }
       }
@@ -64,8 +98,8 @@ function hide() {
 }
 
 function Lexical_Analyzer() {
-  this.words_stack = [];
-  this.path_stack = [];
+  this.token_stack = [];
+  this.state_stack = [];
   this.start_state = "q0";
   this.final_state = "q37";
   this.current_state = "q0";
