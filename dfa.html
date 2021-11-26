@@ -18,7 +18,7 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                    <span class="fs-4">Autômato Finito Deterministico</span>
+                    <span class="fs-4">Analisador Léxico</span>
                 </a>
                 <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                     <li>
@@ -39,7 +39,7 @@
 
 <body>
     <div class="d-flex" id="wrapper">
-        
+
         <!-- Page content wrapper-->
         <div id="page-content-wrapper" style="width: 100%;">
             <!-- Page content-->
@@ -47,11 +47,841 @@
                 <label for="numVariable" class="mt-4 form-label">Pesquisar Palavra</label>
                 <input type="text" class="form-control" id="token" name="token" oninput="change()">
             </div>
+            <div class="container-fluid">
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="collum_state">#</th>
+                                <th scope="col" class="collum_a">a</th>
+                                <th scope="col" class="collum_b">b</th>
+                                <th scope="col" class="collum_c">c</th>
+                                <th scope="col" class="collum_d">d</th>
+                                <th scope="col" class="collum_e">e</th>
+                                <th scope="col" class="collum_f">f</th>
+                                <th scope="col" class="collum_g">g</th>
+                                <th scope="col" class="collum_h">h</th>
+                                <th scope="col" class="collum_i">i</th>
+                                <th scope="col" class="collum_l">l</th>
+                                <th scope="col" class="collum_n">n</th>
+                                <th scope="col" class="collum_o">o</th>
+                                <th scope="col" class="collum_r">r</th>
+                                <th scope="col" class="collum_s">s</th>
+                                <th scope="col" class="collum_t">t</th>
+                                <th scope="col" class="collum_u">u</th>
+                                <th scope="col" class="collum_w">w</th>
+                                <th scope="col" class="collum_z">z</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row_q0">
+                                <td class="collum_state">->q0</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">q1</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">q2</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">q3</td>
+                                <td class="collum_w">q5</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr  class="row_q1">
+                                <td class="collum_state">q1</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">q6</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">q7</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr  class="row_q2">
+                                <td class="collum_state">q2</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">q10</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">q11</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">q12</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q3">
+                                <td class="collum_state">q3</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">q16</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q4">
+                                <td class="collum_state">q4</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">q20</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q5">
+                                <td class="collum_state">q5</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">q13</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q6">
+                                <td class="collum_state">q6</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">q17</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">q19</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q7">
+                                <td class="collum_state">q7</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">q21</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q8">
+                                <td class="collum_state">q8</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">q28</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q9">
+                                <td class="collum_state">q9</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">q26</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q10">
+                                <td class="collum_state">q10</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">q4</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">q18</td>
+                            </tr>
+                            <tr class="row_q11">
+                                <td class="collum_state">q11</td>
+                                <td class="collum_a">q22</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">q8</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q12">
+                                <td class="collum_state">q12</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">q23</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q13">
+                                <td class="collum_state">q13</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">q25</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q14">
+                                <td class="collum_state">q14</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">q30</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q15">
+                                <td class="collum_state">q15</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">q34</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q16">
+                                <td class="collum_state">q16</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">q14</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q17">
+                                <td class="collum_state">q17</td>
+                                <td class="collum_a">q9</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q18">
+                                <td class="collum_state">q18</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">q27</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q19">
+                                <td class="collum_state">q19</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">q24</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q20">
+                                <td class="collum_state">q20</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">q32</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q21">
+                                <td class="collum_state">q21</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">q25</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q22">
+                                <td class="collum_state">q22</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">q15</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q23">
+                                <td class="collum_state">q23</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">q29</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q24">
+                                <td class="collum_state">q24</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">q31</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q25">
+                                <td class="collum_state">q25</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">q31</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q26">
+                                <td class="collum_state">q26</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">q35</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q27">
+                                <td class="collum_state">q27</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">q33</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q28">
+                                <td class="collum_state">q28</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">q35</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q29">
+                                <td class="collum_state">q29</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">q36</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q30">
+                                <td class="collum_state">q30</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">q4</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q31">
+                                <td class="collum_state">q31</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">q37</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q32">
+                                <td class="collum_state">q32</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">q37</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr class="row_q33">
+                            <tr>
+                                <td class="collum_state">q33</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">q37</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q34">
+                                <td class="collum_state">q34</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">q37</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">q37</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q35">
+                                <td class="collum_state">q35</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">q37</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q36">
+                                <td class="collum_state">q36</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">q37</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                            <tr class="row_q37">
+                                <td>*q37</td>
+                                <td class="collum_a">-</td>
+                                <td class="collum_b">-</td>
+                                <td class="collum_c">-</td>
+                                <td class="collum_d">-</td>
+                                <td class="collum_e">-</td>
+                                <td class="collum_f">-</td>
+                                <td class="collum_g">-</td>
+                                <td class="collum_h">-</td>
+                                <td class="collum_i">-</td>
+                                <td class="collum_l">-</td>
+                                <td class="collum_n">-</td>
+                                <td class="collum_o">-</td>
+                                <td class="collum_r">-</td>
+                                <td class="collum_s">-</td>
+                                <td class="collum_t">-</td>
+                                <td class="collum_u">-</td>
+                                <td class="collum_w">-</td>
+                                <td class="collum_z">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
         <!-- Sidebar-->
         <div class="border-end bg-white" id="sidebar-wrapper">
-            <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" id="words" style="width: 250px; height: 100%;">
+            <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" id="words"
+                style="width: 250px; height: 100%;">
                 <a href="/"
                     class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
                     <svg class="bi me-2" width="30" height="24">
@@ -75,7 +905,7 @@
                             <strong class="mb-1">switch</strong>
                         </div>
                     </a>
-    
+
                     <a class="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
                             <strong class="mb-1">static</strong>

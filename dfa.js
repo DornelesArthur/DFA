@@ -1,44 +1,47 @@
 $(document).ready(function () {
   $("#sidebar-wrapper").hide();
+  $(".collum_z").addClass('success'); 
+  $(".row_q0").addClass('error'); 
+  
+  
 });
 
 function change() {
+    $(".row_q0").removeClass('error');
   var token = document.getElementById("token").value.slice(-1);
-  if (automaton.current_state != "Error") {
-    var new_state = automaton.dfa.get(automaton.current_state).get(token);
+  if (analyzer.current_state != "Error") {
+    var new_state = analyzer.dfa.get(analyzer.current_state).get(token);
   }
-  var current_state = automaton.current_state;
+  var current_state = analyzer.current_state;
   if (this.old_length == undefined) {
     this.old_length = 0;
   }
 
   if (document.getElementById("token").value.length < this.old_length) {
-    automaton.current_state = automaton.path_stack.pop();
+    analyzer.current_state = analyzer.path_stack.pop();
   } else if (document.getElementById("token").value.length > this.old_length) {
     if (token == " ") {
       console.log(
-        "Estado final = ".concat(
-          automaton.final_state == automaton.current_state
-        )
+        "Estado final = ".concat(analyzer.final_state == analyzer.current_state)
       );
-      if (automaton.final_state == automaton.current_state) {
+      if (analyzer.final_state == analyzer.current_state) {
         swal("Sucesso!", "Palavra Válida!", "success");
       } else {
         swal("Falha!", "Palavra Inválida!", "error");
       }
-      automaton.current_state = automaton.start_state;
+      analyzer.current_state = analyzer.start_state;
       document.getElementById("token").value = "";
-      for (let i = 0; i < automaton.path_stack.length; i++) {
-        let item = automaton.path_stack.pop();
-        console.log({ i, item, length: automaton.path_stack.length });
+      for (let i = 0; i < analyzer.path_stack.length; i++) {
+        let item = analyzer.path_stack.pop();
+        console.log({ i, item, length: analyzer.path_stack.length });
       }
     } else {
-      automaton.path_stack.push(current_state);
-      if (automaton.current_state != "Error") {
+      analyzer.path_stack.push(current_state);
+      if (analyzer.current_state != "Error") {
         if (new_state != undefined) {
-          automaton.current_state = new_state;
+          analyzer.current_state = new_state;
         } else {
-          automaton.current_state = "Error";
+          analyzer.current_state = "Error";
         }
       }
     }
@@ -55,7 +58,7 @@ function hide() {
   }
 }
 
-function DFA() {
+function Lexical_Analyzer() {
   this.path_stack = [];
   this.start_state = "q0";
   this.final_state = "q37";
@@ -238,4 +241,4 @@ function DFA() {
   //   console.log(this.dfa.get("q0").get("-") == undefined);
 }
 
-var automaton = new DFA();
+var analyzer = new Lexical_Analyzer();
