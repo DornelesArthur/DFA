@@ -3,8 +3,8 @@
   left: auto !important;
 }
 .error{
-    background-color: rgba(255, 0, 0, 0.61);
+    background-color: rgba(216, 0, 0, 0.6);
 }
 .success{
-    background-color: rgba(26, 170, 26, 0.733);
+    background-color: rgba(26, 170, 26, 0.60);
 }

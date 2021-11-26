@@ -1,13 +1,12 @@
 $(document).ready(function () {
   $("#sidebar-wrapper").hide();
-  $(".collum_z").addClass('success'); 
-  $(".row_q0").addClass('error'); 
-  
-  
+  $(".collum_d".concat()).css("background-color", "rgba(216, 0, 0, 0.6)");
+  $(".row_q32".concat()).css("background-color", "rgba(216, 0, 0, 0.6)");
 });
 
 function change() {
-    $(".row_q0").removeClass('error');
+  // $(".collum_".concat()).css("background-color","");
+  // $(".row_".concat()).css("background-color","");
   var token = document.getElementById("token").value.slice(-1);
   if (analyzer.current_state != "Error") {
     var new_state = analyzer.dfa.get(analyzer.current_state).get(token);
@@ -29,14 +28,20 @@ function change() {
       } else {
         swal("Falha!", "Palavra Inválida!", "error");
       }
+      $(".row_".concat(analyzer.path_stack.slice(-1).pop())).css(
+        "background-color",
+        ""
+      );
+      $(".collum_".concat(analyzer.words_stack.slice(-1).pop())).css("background-color","");
       analyzer.current_state = analyzer.start_state;
       document.getElementById("token").value = "";
       for (let i = 0; i < analyzer.path_stack.length; i++) {
-        let item = analyzer.path_stack.pop();
-        console.log({ i, item, length: analyzer.path_stack.length });
+        analyzer.path_stack.pop();
+        analyzer.words_stack.pop();
       }
     } else {
       analyzer.path_stack.push(current_state);
+      analyzer.words_stack.push(token);
       if (analyzer.current_state != "Error") {
         if (new_state != undefined) {
           analyzer.current_state = new_state;
@@ -59,6 +64,7 @@ function hide() {
 }
 
 function Lexical_Analyzer() {
+  this.words_stack = [];
   this.path_stack = [];
   this.start_state = "q0";
   this.final_state = "q37";
